@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice ~ JavaScript.</title>
+    <!-- link for custom css  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- header part start here  -->
+    <header id="header">
+        <h1>Invoice</h1>
+    </header>
+    <!-- header part end here  -->
+
+    <!-- main part start here  -->
+    <main id="main">
+        <section class="invoice-wrapper">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="field">
+                        <div class="input-field">
+                            <label for="buyer-details">Buyer Info</label>
+                            <textarea name="buyer-details" id="buyer-details" cols="30" rows="3"
+                                placeholder="Buyer Information"></textarea>
+                        </div>
+                        <div class="input-field">
+                            <label for="invoice-number">Invoice Number</label>
+                            <input type="text" readonly id="invoice-number" value="#inv-45874">
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="items-area">
+                        <h3>Add You Items</h3>
+                        <table id="item-input-table">
+                            <thead>
+                                <tr>
+                                    <th>Item name</th>
+                                    <th>Item Price</th>
+                                    <th>Item Quantity</th>
+                                    <th>Item Total</th>
+                                    <th><button id="addLine-btn" onclick="addLineInputItem()">Add Line</button></th>
+                                </tr>
+                            </thead>
+                            <tbody id="item-input-list">
+                                <tr>
+                                    <td><input type="text" placeholder="Item name" class="item-name"></td>
+                                    <td><input type="number" placeholder="Item Price" class="item-price"></td>
+                                    <td><input type="number" placeholder="Item Quantity" class="item-qty"></td>
+                                    <td><input type="number" readonly placeholder="00" class="item-total"></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       
+                    </div>
+                    <div class="button-area">
+                        <button id="create-invoice"><span class="spin"></span><span class="text hide">Create Invoice</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- main part end here  -->
+
+    <!-- footer part start here  -->
+    <footer id="footer">
+        <p class="footer-text">Invoice Footer@copyright </p>
+    </footer>
+    <!-- footer part end here  -->
+
+
+    <!-- invoice modal created  -->
+    <div class="modal" id="invoice-modal">
+        <button class="close-btn">&times;</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Invoice: <span id="invoice-id">#inv-45874</span></h2>
+                <div class="btn-group">
+                    <button>Print Invoice</button>
+                    <button>Download Invoice</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="customer-info">
+                    <div class="info">
+                        <p>Date: <span id="today-date">11/12/2022</span></p>
+                    </div>
+                    <div class="info">
+                        <span class="name">Invoice To:</span>
+                        <span id="buyer-info"></span>
+                    </div>
+                    <div class="info">
+                        <span class="name">Seller To:</span>
+                        <span>Ashik Agro Ltd., Gaibandha,Rangpur, Bangladesh.</span>
+                    </div>
+                </div>
+                <div class="items-info">
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="items-list">
+
+                        </tbody>
+                        <tbody id="tfoot">
+                            <tr>
+                                <td colspan="3">SubTotal</td>
+                                <td>$<span id="sub-total">0</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Tax</td>
+                                <td>$<span id="tax">0</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Grand Total</td>
+                                <td>$<span id="grand-total">0</span></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="footer-info">
+                    <div class="seller-info">
+                        <span class="colorize">Bank Transfer</span>
+                        <p class="desc">Account Name: Ashik mahmud Account Number:1234567890934 Transaction Code:
+                            231231231212312</p>
+                    </div>
+                    <div class="grand-total-final">
+                        <span class="colorize">Total Amount</span>
+                        <p>$ <span id="grand-total-1" class="colorize">0</span></p>
+                        <span>Tax Included</span>
+                    </div>
+                </div>
+                <div class="commitment-text">
+                    <p>Get started by creating a new file or uploading an existing file. We recommend every repository
+                        include a README, LICENSE, and .gitignore.</p>
+                    <span>Thanks by</span>
+                    <strong>Ashik mahmud</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- scripting linking here  -->
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
